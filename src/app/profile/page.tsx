@@ -5,9 +5,12 @@ import React from 'react';
 import Avatar from 'public/profile/avatar.svg';
 import { useRouter } from 'next/navigation';
 import ProfileContent from '@features/profile/ProfileContent';
+import useToggle from '@/lib/hooks/useToggle';
+import Modal from '@components/Modal';
 
 const ProfilePage = () => {
   const router = useRouter();
+  const [isOpenDeleteModal, toggleDeleteModal] = useToggle();
 
   return (
     <>
@@ -28,8 +31,18 @@ const ProfilePage = () => {
       <div className="bg-[#1e1e1e] h-[8px] w-full"></div>
       <BodyLayout>
         <ProfileContent name="로그아웃" onClick={() => console.log('a')} />
-        <ProfileContent name="회원탈퇴" onClick={() => console.log('a')} />
+        <ProfileContent name="회원탈퇴" onClick={toggleDeleteModal} />
       </BodyLayout>
+
+      {isOpenDeleteModal && (
+        <Modal
+          type="okCancel"
+          title="회원을 탈퇴하겠습니까?"
+          okColor="red"
+          onCancel={toggleDeleteModal}
+          okText="탈퇴"
+        />
+      )}
     </>
   );
 };
