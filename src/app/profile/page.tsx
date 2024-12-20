@@ -15,6 +15,7 @@ const ProfilePage = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [onePageReport, setOnePageReport] = useState(null);
   const [isOpenReportModal, toggleReportModal] = useToggle();
+  const [isOpenLogoutModal, toggleLogoutModal] = useToggle();
   const [isOpenDeleteModal, toggleDeleteModal] = useToggle();
 
   const onClickOnePageReport = () => {
@@ -43,7 +44,7 @@ const ProfilePage = () => {
       </BodyLayout>
       <div className="bg-[#1e1e1e] h-[8px] w-full"></div>
       <BodyLayout>
-        <ProfileContent name="로그아웃" onClick={() => console.log('a')} />
+        <ProfileContent name="로그아웃" onClick={toggleLogoutModal} />
         <ProfileContent name="회원탈퇴" onClick={toggleDeleteModal} />
       </BodyLayout>
 
@@ -57,6 +58,15 @@ const ProfilePage = () => {
             router.push('/profile/report/info');
           }}
           okText="입력"
+        />
+      )}
+      {isOpenLogoutModal && (
+        <Modal
+          type="okCancel"
+          title="로그아웃을 하시겠습니까?"
+          okColor="red"
+          onCancel={toggleLogoutModal}
+          okText="로그아웃"
         />
       )}
       {isOpenDeleteModal && (
