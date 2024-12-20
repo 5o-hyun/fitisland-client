@@ -1,22 +1,19 @@
 'use client';
 import React from 'react';
 import Arrow from 'public/home/arrow.svg';
-import { useRouter } from 'next/navigation';
 
 type TabBarProps = {
   name: string;
-  back?: boolean;
+  onClickBack?: () => void;
 };
 
-const TabBar = ({ name, back = false }: TabBarProps) => {
-  const router = useRouter();
-
+const TabBar = ({ name, onClickBack }: TabBarProps) => {
   return (
     <div className="h-[60px] border-b-[1px] border-solid border-[#404040] flex items-center relative">
-      {back && (
+      {onClickBack && (
         <div
           className="w-[48px] h-[48px] flex justify-center items-center absolute"
-          onClick={() => router.back()}
+          onClick={onClickBack}
         >
           <Arrow className="cursor-pointer" />
         </div>
