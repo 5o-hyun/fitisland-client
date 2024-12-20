@@ -5,7 +5,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function HomeLayout({ children }: Props) {
+export default function AdventureLayout({ children }: Props) {
   return (
     <BaseLayout>
       {children}

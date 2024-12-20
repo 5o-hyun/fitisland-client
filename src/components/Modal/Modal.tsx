@@ -20,7 +20,7 @@ const Modal = ({
   onOk,
 }: Props) => {
   return (
-    <div className="fixed top-0 left-[50%] translate-x-[-50%] w-full desktop:w-[393px] h-full">
+    <div className="fixed top-0 left-[50%] translate-x-[-50%] w-full desktop:w-[393px] h-full z-50">
       <div className="bg-[rgba(0,0,0,.6)] w-full h-full absolute"></div>
       <div className="w-[335px] bg-[#313131] rounded-[12px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] px-[20px] py-[18px]">
         <p className="text-[18px] text-center py-[10px] mb-4">{title}</p>
