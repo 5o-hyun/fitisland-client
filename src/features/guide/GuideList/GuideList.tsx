@@ -1,7 +1,11 @@
+'use client';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { IoMdHeart } from 'react-icons/io';
 
 const GuideList = () => {
+  const router = useRouter();
+
   return (
     <div className="my-3 flex items-center justify-between">
       <div className="flex items-center gap-4">
@@ -20,6 +24,7 @@ const GuideList = () => {
           height={24}
           viewBox="0 0 24 24"
           className="cursor-pointer text-[#505050]"
+          onClick={() => router.push('/guide/info')}
         >
           <g fill="none" stroke="currentColor" strokeLinejoin="round">
             <circle cx={12} cy={12} r={9} strokeLinecap="round" strokeWidth={2}></circle>
