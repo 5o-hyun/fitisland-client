@@ -15,11 +15,11 @@ const Navigation = () => {
 
   return (
     <div className="fixed desktop:w-[393px] w-full bottom-0">
-      <nav className="pb-[27px] pt-[10px] w-full bg-[#141517] flex justify-between px-[20px] border-t-[1px] border-solid border-[#404040]">
+      <nav className="pb-[27px] pt-[10px] w-full bg-[#141517] flex justify-between border-t-[1px] border-solid border-[#404040]">
         {navigationMenus.map((menu) => (
           <div
             key={menu.id}
-            className="flex flex-col items-center cursor-pointer"
+            className="flex flex-col items-center cursor-pointer w-1/5"
             onClick={() => router.push(menu.link)}
           >
             <div
