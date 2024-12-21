@@ -3,9 +3,13 @@ import React, { useState } from 'react';
 import Arrow from 'public/home/arrow.svg';
 import dayjs from 'dayjs';
 
-const RecodeCalendar = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+type Props = {
+  selectedDate: Date;
+  moveWeek: (direction: number) => void;
+  onClick: (date: Date) => void;
+};
 
+const RecodeCalendar = ({ selectedDate, moveWeek, onClick }: Props) => {
   const getWeekRange = (date: Date) => {
     const startOfWeek = new Date(date);
     startOfWeek.setDate(date.getDate() - date.getDay());
@@ -18,17 +22,14 @@ const RecodeCalendar = () => {
 
   const currentWeek = getWeekRange(selectedDate);
 
-  const moveWeek = (direction: number) => {
-    const newDate = new Date(selectedDate);
-    newDate.setDate(selectedDate.getDate() + direction * 7);
-    setSelectedDate(newDate);
-  };
-
   return (
-    <div className="bg-[#1A1A1A] rounded-2xl py-[20px] my-[20px]">
-      <h2 className="text-[18px] font-medium mb-4 pb-4 border-b-[1px] border-solid border-[#2F2F2F] mx-[20px]">
-        {dayjs(selectedDate).format('YYYY년 MM월 DD일')}
-      </h2>
+    <div className="bg-[#1A1A1A] rounded-2xl py-[20px] my-[20px] border-[1px] border-solid border-primary">
+      <div className="mb-4 pb-4 border-solid border-b-[1px] border-[#2F2F2F] mx-[20px] flex items-center justify-between">
+        <h2 className="text-[18px] font-medium">{dayjs(selectedDate).format('YYYY년 MM월')}</h2>
+        <p className="text-[12px] text-[#888888]">
+          오늘 <span className="text-primary">{dayjs(new Date()).format('YYYY년 MM월 DD일')}</span>
+        </p>
+      </div>
       <div className="flex">
         <button onClick={() => moveWeek(-1)}>
           <Arrow />
@@ -42,7 +43,7 @@ const RecodeCalendar = () => {
                   ? 'bg-primary text-black font-semibold'
                   : 'text-[#8C8C8C]'
               }`}
-              onClick={() => setSelectedDate(date)}
+              onClick={() => onClick(date)}
             >
               <p className="text-[14px]">
                 {date.toLocaleDateString('ko-KR', { weekday: 'short' })}
