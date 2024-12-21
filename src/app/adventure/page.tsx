@@ -1,8 +1,12 @@
+'use client';
 import BodyLayout from '@components/Layouts/BodyLayout';
 import TabBar from '@components/TabBar';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const AdventurePage = () => {
+  const router = useRouter();
+
   return (
     <div>
       <TabBar name="탐험하기 - 대륙" />
@@ -15,7 +19,10 @@ const AdventurePage = () => {
             <p className="font-medium text-[#505050]">Lv. 1</p>
           </div>
           <div className="collapse-content">
-            <div className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer">
+            <div
+              className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer"
+              onClick={() => router.push('/adventure/detail')}
+            >
               추후img
             </div>
           </div>
@@ -28,7 +35,10 @@ const AdventurePage = () => {
             <p className="font-medium text-[#505050]">Lv. 0</p>
           </div>
           <div className="collapse-content">
-            <div className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer">
+            <div
+              className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer"
+              onClick={() => router.push('/adventure/detail')}
+            >
               추후img
             </div>
           </div>
@@ -41,7 +51,10 @@ const AdventurePage = () => {
             <p className="font-medium text-[#505050]">Lv. 0</p>
           </div>
           <div className="collapse-content">
-            <div className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer">
+            <div
+              className="bg-[#535353] rounded-[10px] w-full h-[375px] cursor-pointer"
+              onClick={() => router.push('/adventure/detail')}
+            >
               추후img
             </div>
           </div>

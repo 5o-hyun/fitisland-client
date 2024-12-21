@@ -31,7 +31,7 @@ const ProfilePage = () => {
       <TabBar name="프로필" />
       <BodyLayout>
         <div className="my-[12px] flex items-center gap-[16px]">
-          <Avatar />
+          <Avatar className="w-[84px] h-[84px]" />
           <div>
             <p className="mb-[8px] text-[#505050] font-medium text-[14px]">???</p>
             <p className="font-medium">닉네임</p>
