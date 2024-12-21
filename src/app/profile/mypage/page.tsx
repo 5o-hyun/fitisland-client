@@ -34,7 +34,7 @@ const MyPage = () => {
           okText="변경"
           onCancel={toggleOpenModal}
         >
-          <div className="border-2 border-solid border-[#888888] rounded-xl py-3 pl-5 pr-2 flex mb-4">
+          <div className="border-2 border-solid border-[#888888] rounded-xl py-3 pl-5 pr-2 flex mb-6">
             <input
               placeholder="최대 10글자"
               className="font-medium text-[18px] placeholder:text-[#666666] bg-transparent outline-none w-full"
