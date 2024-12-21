@@ -2,6 +2,7 @@ import React from 'react';
 import LogoLeft from 'public/home/logo-mini.svg';
 import LogoMain from 'public/home/logo-main.svg';
 import BodyLayout from '@components/Layouts/BodyLayout/BodyLayout';
+import SearchInput from '@components/Inputs/SearchInput';
 
 const HomePage = () => {
   return (
@@ -38,28 +39,7 @@ const HomePage = () => {
             <p className="font-medium text-[14px]">내용</p>
           </div>
         </div>
-        <div className="bg-[#131313] h-[50px] p-[18px] rounded-[6px] flex items-center">
-          <input
-            placeholder="검색어 입력하기"
-            className="flex-1 bg-transparent outline-none placeholder:text-[#444444] font-medium"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={24}
-            height={24}
-            viewBox="0 0 24 24"
-            className="cursor-pointer"
-          >
-            <path
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0-14 0m18 11l-6-6"
-            ></path>
-          </svg>
-        </div>
+        <SearchInput placeholder="검색어 입력하기" />
       </BodyLayout>
     </div>
   );
