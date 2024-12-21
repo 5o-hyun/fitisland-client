@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Arrow from 'public/home/arrow.svg';
 import dayjs from 'dayjs';
 
