@@ -2,6 +2,7 @@ import SearchInput from '@components/Inputs/SearchInput';
 import BodyLayout from '@components/Layouts/BodyLayout';
 import TabBar from '@components/TabBar';
 import GuideChipGrid from '@features/guide/GuideChipGrid';
+import GuideList from '@features/guide/GuideList';
 import React from 'react';
 
 const GuidePage = () => {
@@ -11,7 +12,12 @@ const GuidePage = () => {
       <BodyLayout>
         <SearchInput placeholder="찾으시는 운동을 검색해보세요." className="my-[14px]" />
         <GuideChipGrid />
-        컨텐츠
+        <GuideList />
+        <GuideList />
+        <GuideList />
+        <GuideList />
+        <GuideList />
+        <GuideList />
       </BodyLayout>
     </div>
   );
