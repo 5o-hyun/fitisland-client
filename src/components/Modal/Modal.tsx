@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 type Props = {
+  children?: ReactElement;
   type?: 'ok' | 'okCancel';
   title: string;
   okColor?: 'blue' | 'red';
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const Modal = ({
+  children,
   type = 'ok',
   title,
   okColor = 'blue',
@@ -24,6 +26,7 @@ const Modal = ({
       <div className="bg-[rgba(0,0,0,.6)] w-full h-full absolute"></div>
       <div className="w-[335px] bg-[#313131] rounded-[12px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] px-[20px] py-[18px]">
         <p className="text-[18px] text-center py-[10px] mb-4">{title}</p>
+        {children}
         <div className="w-full h-[50px] flex gap-2">
           {type === 'okCancel' && (
             <button
