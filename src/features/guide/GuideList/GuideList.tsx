@@ -3,12 +3,23 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { IoMdHeart } from 'react-icons/io';
 
-const GuideList = () => {
+type Props = {
+  checked?: boolean;
+};
+
+const GuideList = ({ checked }: Props) => {
   const router = useRouter();
 
   return (
     <div className="my-3 flex items-center justify-between">
       <div className="flex items-center gap-4">
+        {checked && (
+          <input
+            type="checkbox"
+            defaultChecked
+            className="checkbox bg-[#2d2d2d] [--chkbg:#00ff85] [--chkfg:black] "
+          />
+        )}
         <div className="bg-[#1F1F1F] w-[70px] h-[70px] rounded-md">img</div>
         <div>
           <p className="font-medium mb-2">벤치프레스</p>
