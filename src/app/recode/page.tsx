@@ -26,7 +26,12 @@ const RecodePage = () => {
 
   return (
     <BaseLayout>
-      <TabBar name="운동기록" onClickBack={() => router.back()} />
+      <TabBar
+        name="운동기록"
+        rightText="편집"
+        onClickBack={() => router.back()}
+        onClickRight={() => router.push('/recode/update')}
+      />
       <BodyLayout>
         <RecodeCalendar selectedDate={selectedDate} moveWeek={moveWeek} onClick={onClickDate} />
         <RecodeTab selectedDate={selectedDate} />
