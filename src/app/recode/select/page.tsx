@@ -31,7 +31,7 @@ const RecodeSelectPage = () => {
           <RecodeChip name="운동이름" />
           <RecodeChip name="운동이름" />
         </div>
-        <Button name="운동 선택하기" />
+        <Button name="운동 선택하기" onClick={() => router.push('/recode/create')} />
       </div>
     </BaseLayout>
   );
