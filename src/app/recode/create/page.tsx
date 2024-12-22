@@ -12,7 +12,12 @@ const RecodeCreatePage = () => {
 
   return (
     <BaseLayout>
-      <TabBar name="운동 일지 기록하기" onClickBack={() => router.back()} />
+      <TabBar
+        name="운동 일지 기록하기"
+        rightText="편집"
+        onClickBack={() => router.back()}
+        onClickRight={() => router.push('/recode/delete')}
+      />
       <BodyLayout className="mt-[18px]">
         <CollapseCreate />
         <CollapseCreate />
